@@ -30,9 +30,9 @@ def snapshots():
 def list_snapshots(project):
     "List EC2 snapshots"
 
-    instnaces = filter_instances(project)
+    snapshots = filter_instances(project)
 
-    for i in instances:
+    for i in snapshots:
         for v in i.volumes.all():
             for s in v.snapshots.all():
                 print(", ".join((
